@@ -1,0 +1,24 @@
+openenv_yaml = """
+name: ai_calendar_scheduler
+version: 2.0
+
+action_space:
+  type: dict
+  fields:
+    start_time: int
+    duration: int
+
+observation_space:
+  participants: list
+  proposal_history: list
+  done: bool
+
+reward_range: [0.0, 1.0]
+
+tasks:
+  - name: easy
+    grader: TaskEasy
+  - name: medium
+    grader: TaskMedium
+  - name: hard
+    grader: TaskHard
